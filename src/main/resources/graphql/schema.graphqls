@@ -1,0 +1,36 @@
+
+type Query {
+    accountLedger(accountCode: String!): [LedgerEntry!]!
+
+    generalLedgerReport(
+        accountCode: String!
+        fromDate: String!
+        toDate: String!
+    ): GeneralLedgerReport
+}
+
+type LedgerEntry {
+    journalNumber: String!
+    transactionDate: String!
+    postingDate: String!
+    accountCode: String!
+    accountName: String!
+    description: String
+    debitAmount: Float!
+    creditAmount: Float!
+}
+
+type GeneralLedgerReport {
+    accountCode: String!
+    totalDebit: Float!
+    totalCredit: Float!
+    closingBalance: Float!
+    records: [JournalLine!]!
+}
+
+type JournalLine {
+    id: ID!
+    transactionDate: String!
+    debit: Float!
+    credit: Float!
+}
