@@ -40,21 +40,6 @@ Database name: `lms_gl`
 | `gl_posting_rule` | Mapping from LMS events to GL accounts |
 | `gl_account_balance` | Account balances by period and currency |
 
-### Configuration
-
-Set the connection in `src/main/resources/application.properties`:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/lms_gl
-spring.datasource.username=<your-username>
-spring.datasource.password=<your-password>
-spring.jpa.hibernate.ddl-auto=validate
-spring.graphql.graphiql.enabled=true
-```
-
-Keep real credentials out of version control. Use environment variables or a local, git-ignored properties file.
-
----
 
 ## Project structure
 
